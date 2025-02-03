@@ -4,7 +4,7 @@ import pyttsx3
 import requests
 # import client from client.py
 
-# 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
+# ptani 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
 
 
 ttsx = pyttsx3.init()
