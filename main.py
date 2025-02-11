@@ -2,6 +2,7 @@ import speech_recognition as sr
 import webbrowser
 import pyttsx3
 import requests
+import client
 # import client from client.py
 
 ttsx = pyttsx3.init()
@@ -26,7 +27,8 @@ def processCommand(command):
 
     else:
         #let AI handle the command
-        pass
+        response = client.generate_text(command)
+        speak(response)
 
 
 
@@ -49,7 +51,6 @@ if __name__ == "__main__":
                 command = r.recognize_google(audio)
                 print(command)
                 processCommand(command)
-                break
         except Exception as e:
             print(e , "Sorry, I did not get that. Please repeat.")
             # speak("Sorry, I did not get that. Please repeat.")
